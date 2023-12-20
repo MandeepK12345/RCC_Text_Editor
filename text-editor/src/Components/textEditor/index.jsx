@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RichTextEditor, { getTextAlignClassName } from "react-rte";
+import "./index.css";
 
 const toolbarConfig = {
 	// Optionally specify the groups to display (displayed in the order listed).
@@ -42,13 +43,14 @@ const MyStatefulEditor = () => {
 		setValue(value);
 	};
 	return (
-		<div>
-			<label>Text Editor</label>
+		<div className="text-editor-wrapper">
+			<div className="text-editor-heading">Text Editor</div>
 			<RichTextEditor
 				value={value}
 				onChange={onChange}
 				toolbarConfig={toolbarConfig}
 				blockStyleFn={getTextAlignClassName}
+				className="text-editor-textarea"
 			/>
 		</div>
 	);
